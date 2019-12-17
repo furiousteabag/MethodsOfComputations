@@ -7,14 +7,14 @@ Below are listed all tasks with links and descriptions.
 ## Homework 1. 
 24.09.19
 
-- [1.1]()
+- [1.1](NewtonInterpolation/NewtonInterpolation.jpg)
 
    Newton interpolation polynomial (p. 28, ex. 2.3).
    
 ## Homework 2. 
 01.10.19
 
-- [2.1]()
+- [2.1](Lagrange/Lagrange.ipynb)
 
    Lagrange interpolation polynomial (p. 30, ex. 2.5).   
 
@@ -28,13 +28,13 @@ Below are listed all tasks with links and descriptions.
 ## Homework 4. 
 15.10.19
 
- - [4.1]()
+ - [4.1](IntegralApproximation/IntegralApproximation.ipynb)
    
    Integral approximation (p. 52, ex. 6.8). Test function with polynomials with power of 2 and 4, test on some random function.
    
 ## Homework 5. 
 22.10.19
 
- - [5.1]()   
+ - [5.1](GaussIntegralApproximation/GaussIntegralApproximation.ipynb)   
 
    Gauss type formulas (p. 57, ex. 7.4)
