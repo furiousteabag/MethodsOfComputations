@@ -38,3 +38,17 @@ Below are listed all tasks with links and descriptions.
  - [5.1](GaussIntegralApproximation/GaussIntegralApproximation.ipynb)   
 
    Gauss type formulas (p. 57, ex. 7.4)
+   
+## Homework 6. 
+29.10.19
+
+ - [6.1]()   
+
+   Cauchy task solution (p. 69, ex. 8.6)   
+   
+## Homework 7. 
+05.11.19
+
+ - [7.1]()   
+
+   Approximate linear system calculations. Use Newton method, secant method and reversed iterations method. Chord method is not needed (p. 12, ex. 1)  
