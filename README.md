@@ -14,14 +14,14 @@ Below are listed all tasks with links and descriptions.
 ## Homework 2. 
 01.10.19
 
-- [2.1](Lagrange/Lagrange.ipynb)
+- [2.1](LagrangeInterpolation/LagrangeInterpolation.ipynb)
 
    Lagrange interpolation polynomial (p. 30, ex. 2.5).   
 
 ## Homework 3. 
 08.10.19
 
- - [3.1]()
+ - [3.1](DerivativesApproximation/DerivativesApproximation.ipynb)
  
    Derivative approximation (p. 43, ex. 5.4).  
 
@@ -37,18 +37,18 @@ Below are listed all tasks with links and descriptions.
 
  - [5.1](GaussIntegralApproximation/GaussIntegralApproximation.ipynb)   
 
-   Gauss type formulas (p. 57, ex. 7.4)
+   Gauss type formulas (p. 57, ex. 7.4).
    
 ## Homework 6. 
 29.10.19
 
- - [6.1]()   
+ - [6.1](CauchyTask/CauchyTask.ipynb)   
 
-   Cauchy task solution (p. 69, ex. 8.6)   
+   Cauchy task solution (p. 69, ex. 8.6).
    
 ## Homework 7. 
 05.11.19
 
- - [7.1]()   
+ - [7.1](NonLinearEquations/NonLinearEquations.ipynb)   
 
-   Approximate linear system calculations. Use Newton method, secant method and reversed iterations method. Chord method is not needed (p. 12, ex. 1)  
+   Approximate non linear equations calculation (p. 12, ex. 1).   
