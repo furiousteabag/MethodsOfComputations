@@ -71,4 +71,18 @@ Below are listed all tasks with links and descriptions.
 
  - [9.1](InterationsLinearSystems/InterationsLinearSystems.ipynb)   
 
-   Solve linear systems using iterations methods (Book 1, p. 102, ex 12.7).   
+   Solve linear systems using iterations methods (Book 1, p. 102, ex. 12.7).   
+
+## Homework 10. 
+11.03.20
+
+ - [10.1](EigenvalueEigenvector/EigenvalueEigenvector.ipynb)   
+
+    Find eigenvalue and eigenvectors (Book 1, p. 118, ex. 13.8).   
+
+## Homework 11. 
+25.03.20
+
+ - [11.1](IntegralEquation/IntegralEquation.ipynb)   
+
+    Fredholm integral equation of the second kind using mechanical quadrature method (Book 2, p. 38, ex. 4.2.2).   
