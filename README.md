@@ -64,6 +64,11 @@ Below are listed all tasks with links and descriptions.
 
  - [8.1](StraightLinearSystems/StraightLinearSystems.ipynb)   
 
-   Solve linear systems using straightforward methods (Book 1, p. 94, ex. 11.5).   
+    Solve linear systems using straightforward methods (Book 1, p. 94, ex. 11.5).
 
+## Homework 9. 
+26.02.20
 
+ - [9.1](InterationsLinearSystems/InterationsLinearSystems.ipynb)   
+
+   Solve linear systems using iterations methods (Book 1, p. 102, ex 12.7).   
