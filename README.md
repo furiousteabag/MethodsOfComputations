@@ -69,7 +69,7 @@ Below are listed all tasks with links and descriptions.
 ## Homework 9. 
 26.02.20
 
- - [9.1](InterationsLinearSystems/InterationsLinearSystems.ipynb)   
+ - [9.1](IterationsLinearSystems/IterationsLinearSystems.ipynb)   
 
    Solve linear systems using iterations methods (Book 1, p. 102, ex. 12.7).   
 
