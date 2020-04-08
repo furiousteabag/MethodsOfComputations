@@ -86,3 +86,10 @@ Below are listed all tasks with links and descriptions.
  - [11.1](IntegralEquation/IntegralEquation.ipynb)   
 
     Fredholm integral equation of the second kind using mechanical quadrature method (Book 2, p. 38, ex. 4.2.2).   
+
+## Homework 12. 
+15.04.20
+
+ - [12.1](DifferentialEquation/DifferentialEquation.ipynb)   
+
+    Finite difference method for boundary value problem (Book 2, p. 10, ex. 1.5).   
