@@ -93,3 +93,10 @@ Below are listed all tasks with links and descriptions.
  - [12.1](DifferentialEquation/DifferentialEquation.ipynb)   
 
     Finite difference method for boundary value problem (Book 2, p. 10, ex. 1.5).   
+
+## Homework 13. 
+22.04.20
+
+ - [13.1](ParabolicDifferentialEquation/ParabolicDifferentialEquation.ipynb)   
+
+    Finite difference method for parabolic partial differential equation (Book 2, p. 46, ex. 5.5).   
