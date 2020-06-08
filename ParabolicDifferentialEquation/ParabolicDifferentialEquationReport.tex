@@ -6,7 +6,7 @@
 \usepackage[T2A]{fontenc}			
 \usepackage[utf8]{inputenc}			
 \usepackage[english,russian]{babel}	
-
+\usepackage{amsmath}
 \author{Александр Смирнов, 341 группа}
 \title{Метод сеток для решения уравнения параболического типа}
 \date{\today}
@@ -15,8 +15,109 @@
 
 \maketitle
 
-\section{Аннотация}
+\section{Постановка задачи}
+
+    Рассмотрим уравнение параболического типа
+
+    $$\frac{\partial u}{\partial t}=L u + f(x, t), \quad 0<x<1, \quad 0<t \leq T, \quad f(x, t) \in C_{[0,1] \times[0, T]} $$
+
+    удовлетворяющее начальному условию
+    $$ u(x, 0)=\varphi(x), \quad 0 \leq x \leq 1, \quad \varphi(x) \in C_{[0,1]} $$ 
+
+    и граничным условиям
+    $$\alpha_{1}(t) u(0, t)-\alpha_{2}(t) \frac{\partial u}{\partial x}(0, t)=\alpha(t)$$
+    $$\alpha_{1}(t) \alpha_{2}(t) \geq 0, \quad\left|\alpha_{1}(t)\right|+\left|\alpha_{2}(t)\right|>0, \quad 0 \leq t \leq T $$
+    $$\beta_{1}(t) u(1, t)+\beta_{2}(t) \frac{\partial u}{\partial x}(1, t)=\beta(t)$$ 
+    $$\beta_{1}(t) \beta_{0}(t) \geq 0 \quad\left|\beta_{1}(t)\right|+\left|\beta_{0}(t)\right|>0, \quad 0 \leq t \leq T$$
+
+    $L u$ может иметь один из двух видов
 
 
+    $$L u=
+    \begin{cases}
+
+        \text { a) } a(x, t) \frac{\partial^{2} u}{\partial x^{2}}+b(x, t) \frac{\partial u}{\partial x}+c(x, t) u, \quad a(x, t) \in C_{[0,1] \times[0, T]},\quad a(x, t) \geq a_{0}>0, 
+        \\
+        \text { b) } \frac{\partial}{\partial x}\left(p(x) \frac{\partial u}{\partial x}\right)+b(x, t) \frac{\partial u}{\partial x}+c(x, t) u, \quad p(x) \in C_{[0,1]}, \quad p(x) \geq p_{0}>0, \quad 0<x<1, 
+        \\
+        \quad b(x, t) \in C_{[0,1] \times[0, T]}, \quad c(x, t) \in C_{[0,1] \times[0, T]}, \quad c(x, t) \leq 0.
+
+    \end{cases}$$
+
+    Нам нужно найти в $\bar{D}=[0,1] \times[0, T]$ решение $u(x, t)$.
+
+\section{Построение сетки}
+
+    Разобьём отрезок $[0, 1]$ на $N$ равных частей и отрезок $[0, T]$ на $M$ равных частей. Построим сетку узлов $\overline{\omega_{h \tau}}=\left\{\left(x_{i}, t_{k}\right), i=\overline{0, N} ; k=\overline{0, M}\right\}$. 
+
+    Приближённое решение будем искать в виде таблицы значений в точках сетки.
+
+    Используя аппроксимации дифференциальных выражений разностными, заменяем оператор $L$ разностным оператором
+
+    $$L_{h} u_{i}^{k}=
+    \begin{cases}
+
+        \text { a) } a\left(x_{i}, t_{k}\right) \frac{u_{i+1}^{k}-2 u_{i}^{k}+u_{i-1}^{k}}{h^{2}}+b\left(x_{i}, t_{k}\right) \frac{u_{i+1}^{k}-u_{i-1}^{k}}{2 h}+c\left(x_{i}, t_{k}\right) u_{i}^{k}
+\       \\
+        \text { b) } p_{i+\frac{1}{2}} \frac{u_{i+1}^{k}-u_{i}^{k}}{h^{2}}-p_{i-\frac{1}{2}} \frac{u_{i}^{k}-u_{i-1}^{k}}{h^{2}}+b\left(x_{i}, t_{k}\right) \frac{u_{i+1}^{k}-u_{i-1}^{k}}{2 h}+c\left(x_{i}, t_{k}\right) u_{i}^{k}
+       \\
+    \end{cases}$$
+
+\section{Явная разностная схема}
+
+    Будем аппроксимировать уравнение в узле $(x_i, t_{k-1})$
+
+    $$\frac{u_{i}^{k}-u_{i}^{k-1}}{\tau}=L_{h} u_{i}^{k-1}+f\left(x_{i}, t_{k-1}\right), \quad i=\overline{1, N-1}, \quad k=\overline{1, M}$$
+
+    Каждое уравнение будет содержать решения только в четырёх точках $u_{i-1}^{k-1}, u_{i}^{k-1}, u_{i+1}^{k-1}, u_{i}^{k}$.
+
+    Из начального условия получим
+    $$u_{i}^{0}=\varphi\left(x_{i}\right), \quad i=\overline{0, N}$$
+
+    Аппроксимируем граничные условия
+    $$\begin{array}{c}
+\alpha_{1}\left(t_{k}\right) u_{0}^{k}-\alpha_{2}\left(t_{k}\right) \frac{-3 u_{0}^{k}+4 u_{1}^{k}-u_{2}^{k}}{2 h}=\alpha\left(t_{k}\right) \\
+\beta_{1}\left(t_{k}\right) u_{N}^{k}+\beta_{2}\left(t_{k}\right) \frac{3 u_{N}^{k}-4 u_{N-1}^{k}+u_{N-2}^{k}}{2 h}=\beta\left(t_{k}\right) \\
+k=\overline{1, M}
+\end{array}$$
+
+    Решение исходной задачи свелось к решению последних 4-х уравнений.
+
+\section{Схема с весами}
+
+    Пусть $\sigma$ -- вещественный параметр.
+
+    Рассмотрим однопараметрическое свойство разностных схем
+    $$\frac{u_{i}^{k}-u_{i}^{k-1}}{\tau}=L_{h}\left(\sigma u_{i}^{k}+(1-\sigma) u_{i}^{k-1}\right)+f\left(x_{i}, \overline{t_{k}}\right), \quad i=\overline{1, N-1} \quad k=\overline{1, M}$$
+
+    Из начального условия будем иметь
+    $$u_{i}^{0}=\varphi\left(x_{i}\right), \quad i=\overline{0, N}$$
+
+    Производные в краевых условиях аппроксимируем с первым порядком
+    $$\begin{array}{c}
+        \alpha_{1}\left(t_{k}\right) u_{0}^{k}-\alpha_{2}\left(t_{k}\right) \frac{u_{1}^{k}-u_{0}^{k}}{h}=\alpha\left(t_{k}\right) \\
+        \beta_{1}\left(t_{k}\right) u_{N}^{k}+\beta_{2}\left(t_{k}\right) \frac{u_{N}^{k}-u_{N-1}^{k}}{h}=\beta\left(t_{k}\right)
+    \end{array}$$
+
+    Так как к моменту определения решения на $k$-ом слое решение на предыдущем слое уже известно, перепишем систему:
+    $$\sigma L_{h} u_{i}^{k}-\frac{1}{\tau} u_{i}^{k}=G_{i}^{k}$$
+
+    где
+    $$G_{i}^{k}=-\frac{1}{\tau} u_{i}^{k-1}-(1-\sigma) L_{h} u_{i}^{k-1}-f\left(x_{i}, \overline{t_{k}}\right), \quad i=\overline{1, N-1}, \quad k=\overline{1, M}$$
+
+    Граничные условия приведём к виду
+    $$\begin{array}{l}
+        -B_{0} u_{0}^{k}+C_{0} u_{1}^{k}=G_{0}^{k} \\
+        A_{N} u_{N-1}^{k}-B_{N} u_{N}^{k}=G_{N}^{k}
+    \end{array}$$
+
+    Таким образом, на каждом $k$-ом слое в данном случае приходится решать систему $(N+1)$ порядка с трехдиагональной матрицей следующего вида
+    $$\begin{aligned}
+        -B_{0} u_{0}^{k} &+C_{0} u_{1}^{k}=G_{0}^{k} \\
+        A_{i} u_{i-1}^{k}-B_{i} u_{i}^{k} &+C_{i} u_{i+1}^{k}=G_{i}^{k}, \quad i=\overline{1, N-1} \\ A_{N} u_{N-1}^{k}-B_{N} u_{N}^{k} &=G_{N}^{k}, \\
+        k=\overline{1, M}
+    \end{aligned}$$
+
+    Для решения системы будем использовать метод прогонки.
 
 \end{document} 
