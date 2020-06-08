@@ -97,6 +97,6 @@ Below are listed all tasks with links and descriptions.
 ## Homework 13. 
 22.04.20
 
- - [13.1](ParabolicDifferentialEquation/ParabolicDifferentialEquation.ipynb)   
+ - [13.1](ParabolicDifferentialEquation/ParabolicDifferentialEquationReport.pdf)   
 
     Finite difference method for parabolic partial differential equation (Book 2, p. 46, ex. 5.5).   
