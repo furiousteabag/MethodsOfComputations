@@ -5,7 +5,7 @@ This repo contains all homeworks from ["Methods of Computation" course](https://
 Below are listed all tasks with links and descriptions.
 
 # Part 1.
-24.09.19 -- 05.11.19
+24.09.19 — 05.11.19
 
 ## Homework 1. 
 24.09.19
@@ -57,7 +57,7 @@ Below are listed all tasks with links and descriptions.
    Approximate non linear equations calculation (Book 1, p. 12, ex. 1).   
 
 # Part 2.
-19.02.20 -- 27.05.20
+19.02.20 — 27.05.20
 
 ## Homework 8. 
 19.02.20
@@ -99,4 +99,4 @@ Below are listed all tasks with links and descriptions.
 
  - [13.1](ParabolicDifferentialEquation/ParabolicDifferentialEquationReport.pdf)   
 
-    Finite difference method for parabolic partial differential equation (Book 2, p. 46, ex. 5.5).   
+    Finite difference method for parabolic partial differential equation (Book 2, p. 46, ex. 5.5). Made a theory report instead of writing code.
